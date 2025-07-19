@@ -1,216 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>eu te amo minha princesa ❤️‍🩹</title>
-<style>
-  body {
-    margin: 0;
-    background: #000000;
-    font-family: 'Arial', sans-serif;
-    color: #f8bbd0;
-    text-align: center;
-    overflow-x: hidden;
-    padding-bottom: 140px; /* espaço para música no final */
-    position: relative;
-  }
-  h1 {
-    margin-top: 20px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #f48fb1;
-  }
-  #countdown {
-    font-size: 1.2rem;
-    margin: 10px 0 20px 0;
-    font-weight: 600;
-    color: #ce93d8;
-  }
-  #photo-container {https://imgur.com/a/buW9yOs
-    margin: 0 auto 30px;
-    max-width: 300px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(244, 143, 177, 0.7);
-  }
-  #photo-container img {
-    width: 100%;
-    display: block;
-  }
-  #message {
-    font-size: 20px;
-    margin-top: 10px;
-    color: #ce93d8;
-  }
-  /* Chuva de emojis */
-  .emoji-fall {
-    position: fixed;
-    top: -50px;
-    font-size: 30px;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    user-select: none;
-    pointer-events: none;
-    z-index: 1000;
-    text-shadow: 0 0 5px #f48fb1;
-  }
-  @keyframes fall {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eu te amo minha princesa 🫶🏾</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: black;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
     }
-    100% {
-      transform: translateY(110vh) rotate(360deg);
-      opacity: 0;
+    h1 {
+      font-size: 2.5em;
+      margin-top: 50px;
     }
-  }
-  /* Música fixa no final da página */
-  #music-player {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #1a000d;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 -4px 10px rgba(244, 143, 177, 0.7);
-    z-index: 1002;
-    color: #f8bbd0;
-    font-family: Arial, sans-serif;
-  }
-  #music-info {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-  }
-  #music-info img {
-    height: 50px;
-    border-radius: 8px;
-    margin-right: 15px;
-    box-shadow: 0 0 8px #f48fb1;
-  }
-  #music-info .title {
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-  #audio-control {
-    background: #f48fb1;
-    border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    color: #000;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #f48fb1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  /* Conteúdo escondido inicialmente */
-  #content {
-    display: none;
-  }
-  #access-denied {
-    display: none;
-    color: #f44336;
-    font-size: 24px;
-    margin-top: 40px;
-  }
-</style>
+    #contador {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+    #main-photo {
+      width: 80%;
+      max-width: 400px;
+      margin: 40px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 15px white;
+    }
+    #musica-info {
+      margin: 40px 0;
+      font-size: 1.2em;
+    }
+    .emoji {
+      position: fixed;
+      top: -50px;
+      font-size: 30px;
+      animation: cair 5s linear infinite;
+    }
+    @keyframes cair {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div id="content">
-  <h1>eu te amo princesa ❤️‍🩹</h1>
-  <div id="countdown">Carregando dias...</div>
+<!-- Proteção por senha -->
+<script>
+  const senha = prompt("Digite a senha para acessar:");
+  if (senha !== "euteamo") {
+    document.body.innerHTML = "<h2>Acesso negado ❌</h2>";
+    throw new Error("Acesso bloqueado");
+  }
+</script>
 
-  <div id="photo-container">
-    <!-- Troque o src aqui para sua foto preferida -->
-    <img id="main-photo" src="https://i.imgur.com/f2QOqsz.jpg" alt="Foto especial" />
-  </div>
+<h1>eu te amo minha princesa 🫶🏾</h1>
 
-  <div id="message">Você é a melhor coisa que aconteceu na minha vida! 💜</div>
-</div>
+<div id="contador"></div>
 
-<div id="access-denied">
-  <p>❌ Acesso negado. Senha incorreta.</p>
-</div>
+<img id="main-photo" src="https://i.postimg.cc/m2kVShZn/20250719-005917-546.jpg" alt="Foto especial" />
 
-<!-- Player de música fixo -->
-<div id="music-player" style="display:none;">
-  <div id="music-info">
-    <img src="https://img.youtube.com/vi/lV2plyhSRBU/hqdefault.jpg" alt="Capa da música" />
-    <div class="title">Music: <a href="https://youtu.be/lV2plyhSRBU?si=v-E80L8YW65o9Kgf" target="_blank" style="color:#f8bbd0; text-decoration:none;">Música de Fundo 🎵</a></div>
-  </div>
-  <button id="audio-control" title="Tocar/Pausar">▶️</button>
+<div id="musica-info">
+  <p><strong>Música: Vem Cá - Yunk Vino 💘</strong></p>
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/lV2plyhSRBU?autoplay=1&loop=1&playlist=lV2plyhSRBU" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+  </iframe>
 </div>
 
 <script>
-  // Senha
-  function pedirSenha() {
-    const senhaCorreta = 'euteamo';
-    const senha = prompt('Por favor, digite a senha para acessar:');
-    if (senha === senhaCorreta) {
-      document.getElementById('content').style.display = 'block';
-      document.getElementById('music-player').style.display = 'flex';
-      iniciarSite();
-    } else {
-      document.getElementById('access-denied').style.display = 'block';
-    }
+  // CONTADOR
+  const dataInicial = new Date("2025-04-25");
+  const dataAtual = new Date();
+  const diff = Math.floor((dataAtual - dataInicial) / (1000 * 60 * 60 * 24));
+  document.getElementById("contador").textContent = `Estamos juntos há ${diff} dias ❤️`;
+
+  // CHUVA DE EMOJIS
+  function criarEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji");
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    emoji.textContent = "❤️‍🩹";
+    document.body.appendChild(emoji);
+    setTimeout(() => emoji.remove(), 6000);
   }
-
-  // Atualizar contador para 25/04/2025 até hoje
-  function iniciarSite() {
-    const countdownEl = document.getElementById('countdown');
-    const startDate = new Date('2025-04-25T00:00:00');
-
-    function updateDays() {
-      const now = new Date();
-      const diffTime = now - startDate;
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      countdownEl.textContent = `Estamos juntos há ${diffDays} dia${diffDays === 1 ? '' : 's'}! 🥰`;
-    }
-    updateDays();
-    setInterval(updateDays, 1000 * 60 * 60);
-
-    // Chuva de emojis
-    function createEmoji() {
-      const emoji = document.createElement('div');
-      emoji.classList.add('emoji-fall');
-      emoji.textContent = '❤️‍🩹';
-      emoji.style.left = Math.random() * window.innerWidth + 'px';
-      emoji.style.animationDuration = (3 + Math.random() * 5) + 's';
-      emoji.style.fontSize = (20 + Math.random() * 30) + 'px';
-      document.body.appendChild(emoji);
-      setTimeout(() => {
-        emoji.remove();
-      }, 8000);
-    }
-    setInterval(createEmoji, 500);
-  }
-
-  // Música tocando via Audio API com botão
-  const audio = new Audio('https://cdn.pixabay.com/download/audio/2021/11/10/audio_9d8dce1a3b.mp3?filename=calm-ambient-10824.mp3');
-  audio.loop = true;
-  let isPlaying = false;
-
-  const btn = document.getElementById('audio-control');
-  btn.addEventListener('click', () => {
-    if (isPlaying) {
-      audio.pause();
-      btn.textContent = '▶️';
-    } else {
-      audio.play();
-      btn.textContent = '⏸️';
-    }
-    isPlaying = !isPlaying;
-  });
-
-  pedirSenha();
+  setInterval(criarEmoji, 300);
 </script>
 
 </body>
